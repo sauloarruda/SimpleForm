@@ -18,7 +18,10 @@
 		9FA3B46F160BDD5600A93A55 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3B46E160BDD5600A93A55 /* Default-568h@2x.png */; };
 		9FA3B472160BDD5600A93A55 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3B470160BDD5600A93A55 /* MainStoryboard_iPhone.storyboard */; };
 		9FA3B475160BDD5600A93A55 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3B473160BDD5600A93A55 /* MainStoryboard_iPad.storyboard */; };
-		9FA3B478160BDD5600A93A55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA3B477160BDD5600A93A55 /* ViewController.m */; };
+		9FA3B478160BDD5600A93A55 /* ClienteFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA3B477160BDD5600A93A55 /* ClienteFormViewController.m */; };
+		9FA3B480160BE59A00A93A55 /* SexoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA3B47F160BE59A00A93A55 /* SexoViewController.m */; };
+		9FA3B483160BE6CC00A93A55 /* Cliente.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA3B482160BE6CC00A93A55 /* Cliente.m */; };
+		9FA3B488160C00FC00A93A55 /* ClientesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA3B487160C00FC00A93A55 /* ClientesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +40,14 @@
 		9FA3B46E160BDD5600A93A55 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9FA3B471160BDD5600A93A55 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		9FA3B474160BDD5600A93A55 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		9FA3B476160BDD5600A93A55 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9FA3B477160BDD5600A93A55 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9FA3B476160BDD5600A93A55 /* ClienteFormViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClienteFormViewController.h; sourceTree = "<group>"; };
+		9FA3B477160BDD5600A93A55 /* ClienteFormViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClienteFormViewController.m; sourceTree = "<group>"; };
+		9FA3B47E160BE59A00A93A55 /* SexoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexoViewController.h; sourceTree = "<group>"; };
+		9FA3B47F160BE59A00A93A55 /* SexoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexoViewController.m; sourceTree = "<group>"; };
+		9FA3B481160BE6CC00A93A55 /* Cliente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cliente.h; sourceTree = "<group>"; };
+		9FA3B482160BE6CC00A93A55 /* Cliente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cliente.m; sourceTree = "<group>"; };
+		9FA3B486160C00FC00A93A55 /* ClientesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientesViewController.h; sourceTree = "<group>"; };
+		9FA3B487160C00FC00A93A55 /* ClientesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +98,8 @@
 				9FA3B468160BDD5600A93A55 /* AppDelegate.m */,
 				9FA3B470160BDD5600A93A55 /* MainStoryboard_iPhone.storyboard */,
 				9FA3B473160BDD5600A93A55 /* MainStoryboard_iPad.storyboard */,
-				9FA3B476160BDD5600A93A55 /* ViewController.h */,
-				9FA3B477160BDD5600A93A55 /* ViewController.m */,
-				9FA3B45F160BDD5600A93A55 /* Supporting Files */,
+				9FA3B485160BE7E400A93A55 /* Models */,
+				9FA3B484160BE7DD00A93A55 /* Controllers */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -108,6 +116,29 @@
 				9FA3B46E160BDD5600A93A55 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FA3B484160BE7DD00A93A55 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FA3B476160BDD5600A93A55 /* ClienteFormViewController.h */,
+				9FA3B477160BDD5600A93A55 /* ClienteFormViewController.m */,
+				9FA3B47E160BE59A00A93A55 /* SexoViewController.h */,
+				9FA3B47F160BE59A00A93A55 /* SexoViewController.m */,
+				9FA3B45F160BDD5600A93A55 /* Supporting Files */,
+				9FA3B486160C00FC00A93A55 /* ClientesViewController.h */,
+				9FA3B487160C00FC00A93A55 /* ClientesViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9FA3B485160BE7E400A93A55 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9FA3B481160BE6CC00A93A55 /* Cliente.h */,
+				9FA3B482160BE6CC00A93A55 /* Cliente.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +210,10 @@
 			files = (
 				9FA3B465160BDD5600A93A55 /* main.m in Sources */,
 				9FA3B469160BDD5600A93A55 /* AppDelegate.m in Sources */,
-				9FA3B478160BDD5600A93A55 /* ViewController.m in Sources */,
+				9FA3B478160BDD5600A93A55 /* ClienteFormViewController.m in Sources */,
+				9FA3B480160BE59A00A93A55 /* SexoViewController.m in Sources */,
+				9FA3B483160BE6CC00A93A55 /* Cliente.m in Sources */,
+				9FA3B488160C00FC00A93A55 /* ClientesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
