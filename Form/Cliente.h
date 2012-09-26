@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Cliente : NSObject
+@interface Cliente : NSManagedObject
 
 @property (nonatomic, strong) NSString* nome;
-@property (nonatomic) NSInteger idade;
+@property (nonatomic, strong) NSNumber* idade;
 @property (nonatomic, strong) NSString* sexo;
+
++ (NSArray*)todosClientes;
++ (void)salvarCliente:(Cliente*)cliente;
++ (Cliente*)new;
 
 @end

@@ -31,14 +31,14 @@
 {
     self.nomeTextField.text = self.cliente.nome;
     if (self.cliente.idade > 0)
-        self.idadeTextField.text = [NSString stringWithFormat:@"%d", self.cliente.idade];
+        self.idadeTextField.text = [NSString stringWithFormat:@"%d", [self.cliente.idade intValue]];
     self.sexoLabel.text = self.cliente.sexo;
 }
 
 - (void)preencherClienteComDadosDaTela
 {
     self.cliente.nome = self.nomeTextField.text;
-    self.cliente.idade = [self.idadeTextField.text integerValue];
+    self.cliente.idade = [NSNumber numberWithInt:[self.idadeTextField.text integerValue]];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -51,7 +51,7 @@
 - (Cliente*)cliente
 {
     if (!cliente) {
-        cliente = [[Cliente alloc] init];
+        cliente = [Cliente new];
         _novoCliente = YES;
     }
     return cliente;
@@ -61,9 +61,10 @@
     
     [self preencherClienteComDadosDaTela];
     
+    [Cliente salvarCliente:self.cliente];
     // Grava no array!
-    if (_novoCliente)
-        [self.clientesDatabase addObject:self.cliente];
+    //if (_novoCliente)
+        //[self.clientesDatabase addObject:self.cliente];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

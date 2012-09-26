@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2FC06C16127C3C00E6D16F /* ClienteModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FC06A16127C3C00E6D16F /* ClienteModel.xcdatamodeld */; };
+		9F2FC06F16127D9200E6D16F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2FC06E16127D9200E6D16F /* CoreData.framework */; };
+		9F2FC07216127E2E00E6D16F /* ObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FC07116127E2E00E6D16F /* ObjectManager.m */; };
 		9FA3B459160BDD5500A93A55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA3B458160BDD5500A93A55 /* UIKit.framework */; };
 		9FA3B45B160BDD5500A93A55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA3B45A160BDD5500A93A55 /* Foundation.framework */; };
 		9FA3B45D160BDD5500A93A55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA3B45C160BDD5500A93A55 /* CoreGraphics.framework */; };
@@ -25,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F2FC06B16127C3C00E6D16F /* ClienteModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClienteModel.xcdatamodel; sourceTree = "<group>"; };
+		9F2FC06E16127D9200E6D16F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9F2FC07016127E1E00E6D16F /* ObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectManager.h; sourceTree = "<group>"; };
+		9F2FC07116127E2E00E6D16F /* ObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectManager.m; sourceTree = "<group>"; };
 		9FA3B454160BDD5500A93A55 /* Form.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Form.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA3B458160BDD5500A93A55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9FA3B45A160BDD5500A93A55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2FC06F16127D9200E6D16F /* CoreData.framework in Frameworks */,
 				9FA3B459160BDD5500A93A55 /* UIKit.framework in Frameworks */,
 				9FA3B45B160BDD5500A93A55 /* Foundation.framework in Frameworks */,
 				9FA3B45D160BDD5500A93A55 /* CoreGraphics.framework in Frameworks */,
@@ -84,6 +92,7 @@
 		9FA3B457160BDD5500A93A55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F2FC06E16127D9200E6D16F /* CoreData.framework */,
 				9FA3B458160BDD5500A93A55 /* UIKit.framework */,
 				9FA3B45A160BDD5500A93A55 /* Foundation.framework */,
 				9FA3B45C160BDD5500A93A55 /* CoreGraphics.framework */,
@@ -94,12 +103,15 @@
 		9FA3B45E160BDD5500A93A55 /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				9F2FC07116127E2E00E6D16F /* ObjectManager.m */,
+				9F2FC07016127E1E00E6D16F /* ObjectManager.h */,
 				9FA3B467160BDD5600A93A55 /* AppDelegate.h */,
 				9FA3B468160BDD5600A93A55 /* AppDelegate.m */,
 				9FA3B470160BDD5600A93A55 /* MainStoryboard_iPhone.storyboard */,
 				9FA3B473160BDD5600A93A55 /* MainStoryboard_iPad.storyboard */,
 				9FA3B485160BE7E400A93A55 /* Models */,
 				9FA3B484160BE7DD00A93A55 /* Controllers */,
+				9F2FC06A16127C3C00E6D16F /* ClienteModel.xcdatamodeld */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -214,6 +226,8 @@
 				9FA3B480160BE59A00A93A55 /* SexoViewController.m in Sources */,
 				9FA3B483160BE6CC00A93A55 /* Cliente.m in Sources */,
 				9FA3B488160C00FC00A93A55 /* ClientesViewController.m in Sources */,
+				9F2FC06C16127C3C00E6D16F /* ClienteModel.xcdatamodeld in Sources */,
+				9F2FC07216127E2E00E6D16F /* ObjectManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,8 +353,22 @@
 				9FA3B47D160BDD5600A93A55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9F2FC06A16127C3C00E6D16F /* ClienteModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9F2FC06B16127C3C00E6D16F /* ClienteModel.xcdatamodel */,
+			);
+			currentVersion = 9F2FC06B16127C3C00E6D16F /* ClienteModel.xcdatamodel */;
+			path = ClienteModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9FA3B44B160BDD5500A93A55 /* Project object */;
 }

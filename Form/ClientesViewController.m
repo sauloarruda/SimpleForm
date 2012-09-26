@@ -12,7 +12,7 @@
 
 @interface ClientesViewController ()
 
-@property (nonatomic, strong) NSMutableArray* clientesDatabase;
+@property (nonatomic, strong) NSArray* clientesDatabase;
 - (IBAction)editButtonTapped:(id)sender;
 
 @end
@@ -35,6 +35,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    clientesDatabase = nil;
     [self.tableView reloadData];
 }
 
@@ -42,9 +43,11 @@
 
 @synthesize clientesDatabase;
 
-- (NSMutableArray*)clientesDatabase
+- (NSArray*)clientesDatabase
 {
-    if (!clientesDatabase) clientesDatabase = [[NSMutableArray alloc] init];
+    if (!clientesDatabase) {
+        clientesDatabase = [Cliente todosClientes];
+    }
     return clientesDatabase;
 }
 
@@ -61,7 +64,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [clientesDatabase count];
+    return [self.clientesDatabase count];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,8 +79,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Cliente* cliente = [self.clientesDatabase objectAtIndex:indexPath.row];
-    [self.clientesDatabase removeObject:cliente];
+    //Cliente* cliente = [self.clientesDatabase objectAtIndex:indexPath.row];
+    //[self.clientesDatabase removeObject:cliente];
     
     [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
