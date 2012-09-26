@@ -16,22 +16,40 @@
 + (NSArray*)todosClientes
 {
     NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Cliente"];
-    NSError* error;
-    NSArray* clientesArray = [[ObjectManager sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    if (error)
-        NSLog(@"Ocorreu um erro ao carregar clientes: %@", error);
-    return clientesArray;
+    return [[ObjectManager sharedInstance] executeFetchRequest:fetchRequest];
 }
 
++ (NSArray*)todosClientesByNome:(NSString *)nome
+{
+    NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Cliente"];
+    if (![@"" isEqualToString:nome]) {
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nome CONTAINS[c] %@", nome];
+        [fetchRequest setPredicate:predicate];
+    }
+    return [[ObjectManager sharedInstance] executeFetchRequest:fetchRequest];
+}
 
-+ (void)salvarCliente:(Cliente*)cliente
++ (void)salvarClientes
 {
     [[ObjectManager sharedInstance] saveContext];
 }
 
-+ (Cliente*)new
++ (void)excluirCliente:(Cliente*)cliente
 {
-    return [[ObjectManager sharedInstance] newManagedObjectForClass:[Cliente class]];
+    [[ObjectManager sharedInstance].managedObjectContext deleteObject:cliente];
+    [[ObjectManager sharedInstance] saveContext];
+}
+
++ (void)cancelarEdicao
+{
+    [[ObjectManager sharedInstance] rollbackContext];
+}
+
++ (Cliente*)novoCliente
+{
+    Cliente* cliente = [[ObjectManager sharedInstance] newManagedObjectForClass:[Cliente class]];
+    cliente.idade = nil; // Limpa o valor da idade
+    return cliente;
 }
 
 @end

@@ -11,7 +11,6 @@
 
 @interface ClienteFormViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray* clientesDatabase;
 @property (nonatomic, strong) Cliente* cliente;
 
 @end

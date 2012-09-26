@@ -23,10 +23,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ClienteFormViewController* destination = segue.destinationViewController;
-    destination.clientesDatabase = self.clientesDatabase;
-    
     if ([segue.identifier isEqualToString:@"editCliente"]) {
+        ClienteFormViewController* destination = segue.destinationViewController;
         NSIndexPath* indexPath = self.tableView.indexPathForSelectedRow;
         Cliente* clienteSelected = [self.clientesDatabase objectAtIndex:indexPath.row];
         destination.cliente = clienteSelected;
@@ -72,6 +70,7 @@
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"clienteCell"];
     Cliente* cliente = [self.clientesDatabase objectAtIndex:indexPath.row];
     cell.textLabel.text = cliente.nome;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d anos", [cliente.idade intValue]];
     return cell;
 }
 
@@ -79,10 +78,20 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Cliente* cliente = [self.clientesDatabase objectAtIndex:indexPath.row];
-    //[self.clientesDatabase removeObject:cliente];
+    Cliente* cliente = [self.clientesDatabase objectAtIndex:indexPath.row];
+    [Cliente excluirCliente:cliente];
+    clientesDatabase = nil; // Força recarregar do banco de dados
     
     [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+#pragma mark - UISearchBarDelegate methods
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    clientesDatabase = nil;
+    clientesDatabase = [Cliente todosClientesByNome:searchText];
+    [self.tableView reloadData];
 }
 
 @end
